@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Element Locator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎯 Element Locator</h1>
+      <p class="subtitle">UI自动化测试助手</p>
+    </header>
+
+    <div class="control-section">
+      <button id="startSelectBtn" class="btn btn-primary">
+        <span class="icon">🖱️</span>
+        <span>开始选择元素</span>
+      </button>
+      <button id="stopSelectBtn" class="btn btn-secondary" style="display: none;">
+        <span class="icon">⏹️</span>
+        <span>停止选择</span>
+      </button>
+    </div>
+
+    <div id="elementInfo" class="element-info" style="display: none;">
+      <div class="info-header">
+        <h3>选中的元素</h3>
+        <button id="clearBtn" class="btn-icon" title="清除">✖️</button>
+      </div>
+      
+      <div class="element-details">
+        <div class="detail-item">
+          <span class="label">标签:</span>
+          <span id="elementTag" class="value"></span>
+        </div>
+        <div class="detail-item">
+          <span class="label">文本:</span>
+          <span id="elementText" class="value"></span>
+        </div>
+        <div class="detail-item">
+          <span class="label">属性:</span>
+          <div id="elementAttrs" class="value attrs-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="locatorsSection" class="locators-section" style="display: none;">
+      <div class="section-header">
+        <h3>定位策略</h3>
+      </div>
+
+      <div id="locatorsList" class="locators-list"></div>
+      
+      <div class="ai-action-buttons">
+        <button id="aiGenerateBtn" class="btn btn-ai" title="AI生成最优策略">
+          <span class="icon">🤖</span>
+          <span>AI优化</span>
+        </button>
+      </div>
+    </div>
+
+    <div id="aiLocatorsSection" class="locators-section ai-locators-section" style="display: none;">
+      <div class="section-header">
+        <h3>🤖 AI优化定位器</h3>
+      </div>
+
+      <div id="aiLocatorsList" class="locators-list"></div>
+    </div>
+
+    <div id="aiChatDialog" class="ai-chat-dialog" style="display: flex;">
+      <div class="chat-header">
+        <h3>💬 AI 对话助手</h3>
+      </div>
+      <div id="chatMessages" class="chat-messages"></div>
+      <div class="chat-input">
+        <textarea id="chatInput" rows="2" placeholder="输入特殊需求或上下文，Shift+Enter 换行"></textarea>
+        <div class="chat-actions">
+          <span id="chatStatus" class="chat-status"></span>
+          <button id="chatSendBtn" class="btn btn-ai" title="发送对话">
+            <span class="icon">🚀</span>
+            <span>发送</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <button id="settingsBtn" class="btn-link">⚙️ 设置</button>
+      <span class="version">v1.0.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

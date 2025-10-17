@@ -1,0 +1,50 @@
+/* Element Locator 内容脚本样式 */
+
+/* 元素选择高亮遮罩 */
+#element-locator-overlay {
+  position: absolute;
+  background: rgba(102, 126, 234, 0.3);
+  border: 2px solid #667eea;
+  pointer-events: none;
+  z-index: 2147483647;
+  transition: all 0.1s ease;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+/* 测试高亮样式 */
+.element-locator-highlight {
+  outline: 3px solid #f39c12 !important;
+  outline-offset: 2px !important;
+  background-color: rgba(243, 156, 18, 0.1) !important;
+  position: relative !important;
+}
+
+.element-locator-highlight::before {
+  content: attr(data-locator-index) !important;
+  position: absolute !important;
+  top: -24px !important;
+  left: 0 !important;
+  background: #f39c12 !important;
+  color: white !important;
+  padding: 2px 8px !important;
+  border-radius: 3px !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  z-index: 2147483647 !important;
+  font-family: Arial, sans-serif !important;
+  line-height: 1.4 !important;
+}
+
+/* 确保高亮效果在所有元素上可见 */
+.element-locator-highlight {
+  animation: element-locator-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes element-locator-pulse {
+  0%, 100% {
+    outline-color: #f39c12;
+  }
+  50% {
+    outline-color: #e67e22;
+  }
+}

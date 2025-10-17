@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Element Locator - 设置</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>⚙️ Element Locator 设置</h1>
+      <p class="subtitle">配置 AI 服务参数</p>
+    </header>
+
+    <main>
+      <section class="settings-section">
+        <h2>🤖 AI 配置</h2>
+        <p class="section-desc">配置 AI 服务用于生成最优的元素定位策略</p>
+
+        <div class="form-group">
+          <label for="aiUrl">
+            <span class="label-text">API URL</span>
+            <span class="label-desc">AI 服务的 API 端点地址</span>
+          </label>
+          <input 
+            type="text" 
+            id="aiUrl" 
+            class="form-input" 
+            placeholder="https://api.example.com/v1/chat/completions"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="aiKey">
+            <span class="label-text">API Key</span>
+            <span class="label-desc">用于身份验证的密钥</span>
+          </label>
+          <div class="input-with-toggle">
+            <input 
+              type="password" 
+              id="aiKey" 
+              class="form-input" 
+              placeholder="sk-xxxxxxxxxxxxxxxx"
+            />
+            <button id="toggleKeyVisibility" class="toggle-btn" title="显示/隐藏">
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="aiModel">
+            <span class="label-text">模型名称</span>
+            <span class="label-desc">使用的 AI 模型</span>
+          </label>
+          <input
+            type="text"
+            id="aiModel"
+            class="form-input"
+            placeholder="gpt-4"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="aiMaxTokens">
+            <span class="label-text">最大 Token 数</span>
+            <span class="label-desc">AI 响应的最大 token 数量（不同模型限制不同，如 GPT-4: 8000，Claude: 4096）</span>
+          </label>
+          <input
+            type="number"
+            id="aiMaxTokens"
+            class="form-input"
+            placeholder="8000"
+            min="1"
+            max="200000"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="aiPrompt">
+            <span class="label-text">提示词模板</span>
+            <span class="label-desc">AI 生成定位策略时使用的提示词（可选，留空使用默认）</span>
+          </label>
+          <textarea
+            id="aiPrompt"
+            class="form-textarea"
+            rows="6"
+            placeholder="留空使用默认提示词模板..."
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button id="testAiBtn" class="btn btn-secondary">
+            🧪 测试连接
+          </button>
+          <button id="saveBtn" class="btn btn-primary">
+            💾 保存设置
+          </button>
+        </div>
+
+        <div id="testResult" class="test-result"></div>
+      </section>
+
+      <section class="settings-section">
+        <h2>📋 默认提示词</h2>
+        <p class="section-desc">以下是默认的 AI 提示词模板供参考</p>
+        <div class="default-prompt">
+          <pre id="defaultPrompt"></pre>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>ℹ️ 使用说明</h2>
+        <div class="help-content">
+          <ol>
+            <li>配置支持 OpenAI 兼容格式的 API 端点</li>
+            <li>确保 API Key 具有访问权限</li>
+            <li>推荐使用 GPT-4 或更高版本的模型以获得更好的效果</li>
+            <li>提示词模板支持变量：<code>{html}</code>（元素 HTML）、<code>{attributes}</code>（元素属性）</li>
+            <li>测试连接将发送一个简单请求验证配置是否正确</li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Element Locator v1.0.0 | <a href="#" id="resetBtn">恢复默认设置</a></p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast" style="display: none;"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
