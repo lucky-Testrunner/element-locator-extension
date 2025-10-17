@@ -2,6 +2,21 @@
 
 一个强大的浏览器扩展，帮助测试人员快速定位页面元素，生成多种定位策略，提高UI自动化测试效率。
 
+## 实际图
+<table align="center">
+<tr>
+<td align="center"><img width="400" alt="image" src="https://github.com/user-attachments/assets/81934e6f-d85b-4c95-990d-47d3e8c8e7cf" /></td>
+<td align="center"><img width="400" alt="image" src="https://github.com/user-attachments/assets/232aaf63-0eb7-482b-a6f7-8961813ea13b" /></td>
+</tr>
+</table>
+
+
+<img width="2560" height="1247" alt="image" src="https://github.com/user-attachments/assets/82f5c572-d43d-41bf-96a5-2e29e53d9636" />
+
+##
+现在你可以通过[Models | 心流开放平台](https://platform.iflow.cn/models)免费使用GLM-4.5、Kimi-K2、Qwen3-Coder-480B-A35B、DeepSeek v3.1等模型。
+##
+
 ## ✨ 主要功能
 
 ### 🖱️ 智能元素选择
@@ -47,17 +62,9 @@
 
 1. **克隆或下载项目**
    ```bash
-   git clone <repository-url>
-   cd element-locator-extension
+   git clone https://github.com/lucky-Testrunner/element-locator-extension.git
    ```
-
-2. **生成图标文件（可选）**
-   ```bash
-   cd icons
-   python generate_icons.py
-   ```
-
-3. **在Chrome/Edge中加载扩展**
+2. **在Chrome/Edge中加载扩展**
    - 打开浏览器，访问 `chrome://extensions/` 或 `edge://extensions/`
    - 启用"开发者模式"（右上角开关）
    - 点击"加载已解压的扩展程序"
@@ -223,17 +230,12 @@ A: 某些网站有严格的CSP策略，可能会阻止内容脚本。可以尝�
 ### Q: AI功能需要付费吗？
 A: AI功能需要您自己的API密钥。您可以使用OpenAI或其他兼容的AI服务，费用取决于您选择的服务。
 
-### Q: 如何生成图标文件？
-A: 运行 `icons/generate_icons.py` 脚本，需要先安装Pillow库：`pip install pillow`
 
 ### Q: 生成的定位器不唯一怎么办？
 A: 使用测试功能验证，选择唯一的定位器。也可以尝试AI优化功能生成更稳定的策略。
 
 ### Q: 支持iframe中的元素吗？
 A: 当前版本需要手动切换到iframe上下文。未来版本会增强iframe支持。
-
-### Q: 可以导出元素定位库吗？
-A: 当前版本暂不支持，这是计划中的功能。
 
 ---
 
